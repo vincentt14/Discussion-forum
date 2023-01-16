@@ -1,11 +1,14 @@
 import React from "react";
+import Navigation from "./components/Navigation";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
-    <>
-      <h1>App</h1>
-    </>
-  )
-}
+    <div className="container">
+      <Navigation />
+      <HomePage />
+    </div>
+  );
+};
 
-export default App
+export default App;
