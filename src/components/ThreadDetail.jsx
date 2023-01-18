@@ -1,7 +1,6 @@
 import React from "react";
-import { postedAt } from "../utils";
 
-const ThreadItem = ({ body, createdAt, ownerId, title }) => {
+const ThreadDetail = ({body, createdAt, ownerId, title}) => {
   return (
     <div className="card mb-3">
       <div className="card-body">
@@ -12,6 +11,6 @@ const ThreadItem = ({ body, createdAt, ownerId, title }) => {
       </div>
     </div>
   );
-};
+}
 
-export default ThreadItem;
+export default ThreadDetail;
