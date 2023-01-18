@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import AddButton from "../components/AddButton";
 import ThreadLists from "../components/ThreadLists";
 import asyncPopulateUsersAndThreads from "../states/shared/action";
 
@@ -24,6 +25,7 @@ const HomePage = () => {
     <section className="container">
       <h1 className="my-3">Diskusi tersedia</h1>
       <ThreadLists threads={threadList} />
+      <AddButton />
     </section>
   );
 };

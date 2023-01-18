@@ -18,7 +18,7 @@ const DetailPage = () => {
     return null;
   }
   return (
-    <section>
+    <section className="container">
       <ThreadDetail {...detailThread} />
     </section>
   );

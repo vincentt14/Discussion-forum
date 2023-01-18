@@ -1,14 +1,15 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-// import Loading from "./components/Loading";
+import { Routes, Route } from 'react-router-dom';
+import Loading from "./components/Loading";
 import Navigation from "./components/Navigation";
+import AddThreadPage from "./pages/AddThreadPage";
 import DetailPage from "./pages/DetailPage";
 import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
     <>
-      {/* <Loading /> */}
+      <Loading />
       <div className="container">
         <header>
           <Navigation />
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/threads/:id" element={<DetailPage />} />
+            <Route path="/addThread" element={<AddThreadPage />} />
           </Routes>
         </main>
       </div>
