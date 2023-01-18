@@ -12,7 +12,7 @@ const store = configureStore({
     isPreload: isPreloadReducer,
     users: usersReducer,
     threads: threadsReducer,
-    threadDetail: threadDetailReducer,
+    detailThread: threadDetailReducer,
     loadingBar: loadingBarReducer,
   },
 });
