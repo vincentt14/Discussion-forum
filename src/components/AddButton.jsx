@@ -1,8 +1,8 @@
-import React from "react";
-import { FiPlus } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
-const AddButton = () => {
+function AddButton() {
   return (
     <Link to="/addThread">
       <div className="homepage__action">
@@ -12,6 +12,6 @@ const AddButton = () => {
       </div>
     </Link>
   );
-};
+}
 
 export default AddButton;

@@ -1,10 +1,11 @@
-import React from "react";
-import { FiAtSign, FiKey } from "react-icons/fi";
-import useInput from "../hooks/useInput";
+import React from 'react';
+import { FiAtSign, FiKey } from 'react-icons/fi';
+import PropTypes from 'prop-types';
+import useInput from '../hooks/useInput';
 
-const LoginInput = ({ login }) => {
-  const [email, onEmailChange] = useInput("");
-  const [password, onPasswordChange] = useInput("");
+function LoginInput({ login }) {
+  const [email, onEmailChange] = useInput('');
+  const [password, onPasswordChange] = useInput('');
 
   return (
     <form className="container">
@@ -25,6 +26,10 @@ const LoginInput = ({ login }) => {
       </button>
     </form>
   );
+}
+
+LoginInput.propTypes = {
+  login: PropTypes.func.isRequired,
 };
 
 export default LoginInput;

@@ -1,5 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 const api = (() => {
-  const BASE_URL = "https://forum-api.dicoding.dev/v1";
+  const BASE_URL = 'https://forum-api.dicoding.dev/v1';
+
+  function putAccessToken(token) {
+    localStorage.setItem('accessToken', token);
+  }
+
+  function getAccessToken() {
+    return localStorage.getItem('accessToken');
+  }
 
   async function _fetchWithAuth(url, options = {}) {
     return fetch(url, {
@@ -11,19 +20,11 @@ const api = (() => {
     });
   }
 
-  function putAccessToken(token) {
-    localStorage.setItem("accessToken", token);
-  }
-
-  function getAccessToken() {
-    return localStorage.getItem("accessToken");
-  }
-
   async function register({ name, email, password }) {
     const response = await fetch(`${BASE_URL}/register`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name,
@@ -35,7 +36,7 @@ const api = (() => {
     const responseJson = await response.json();
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -48,9 +49,9 @@ const api = (() => {
 
   async function login({ email, password }) {
     const response = await fetch(`${BASE_URL}/login`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
@@ -61,7 +62,7 @@ const api = (() => {
     const responseJson = await response.json();
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -79,7 +80,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -97,7 +98,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -115,7 +116,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -133,7 +134,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -146,9 +147,9 @@ const api = (() => {
 
   async function createThread({ title, body }) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         title,
@@ -160,7 +161,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -173,9 +174,9 @@ const api = (() => {
 
   async function createComment({ content, threadid }) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadid}/comments`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         content,
@@ -186,7 +187,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -199,9 +200,9 @@ const api = (() => {
 
   async function threadUpVote(threadid) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadid}/up-vote`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
@@ -209,7 +210,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -222,9 +223,9 @@ const api = (() => {
 
   async function threadDownVote(threadid) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadid}/down-vote`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
@@ -232,7 +233,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 
@@ -245,9 +246,9 @@ const api = (() => {
 
   async function threadNeutralizeVote(threadid) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadid}/neutral-vote`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
@@ -255,7 +256,7 @@ const api = (() => {
 
     const { status, message } = responseJson;
 
-    if (status !== "success") {
+    if (status !== 'success') {
       throw new Error(message);
     }
 

@@ -1,4 +1,4 @@
-import { ActionType } from "./action";
+import { ActionType } from './action';
 
 function threadDetailReducer(detailThread = null, action = {}) {
   switch (action.type) {

@@ -1,7 +1,7 @@
-import api from "../../utils/api";
+import api from '../../utils/api';
 
 const ActionType = {
-  RECIEVE_USERS: "RECIEVE_USERS",
+  RECIEVE_USERS: 'RECIEVE_USERS',
 };
 
 function recieveUsersActionCreator(users) {
@@ -26,5 +26,5 @@ function asyncRegisterUser({ name, email, password }) {
 export {
   ActionType,
   recieveUsersActionCreator,
-  asyncRegisterUser
-}
+  asyncRegisterUser,
+};

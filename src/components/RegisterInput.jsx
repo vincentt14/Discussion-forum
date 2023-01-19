@@ -1,11 +1,12 @@
-import React from "react";
-import { FiAtSign, FiKey, FiRepeat, FiUser } from "react-icons/fi";
-import useInput from "../hooks/useInput";
+import React from 'react';
+import { FiAtSign, FiKey, FiUser } from 'react-icons/fi';
+import PropTypes from 'prop-types';
+import useInput from '../hooks/useInput';
 
-const RegisterInput = ({ register }) => {
-  const [name, onNameChange] = useInput("");
-  const [email, onEmailChange] = useInput("");
-  const [password, onPasswordChange] = useInput("");
+function RegisterInput({ register }) {
+  const [name, onNameChange] = useInput('');
+  const [email, onEmailChange] = useInput('');
+  const [password, onPasswordChange] = useInput('');
 
   return (
     <form className="container">
@@ -32,6 +33,10 @@ const RegisterInput = ({ register }) => {
       </button>
     </form>
   );
+}
+
+RegisterInput.propTypes = {
+  register: PropTypes.func.isRequired,
 };
 
 export default RegisterInput;

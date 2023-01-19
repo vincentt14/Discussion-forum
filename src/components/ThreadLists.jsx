@@ -1,7 +1,10 @@
-import React from "react";
-import ThreadItem from "./ThreadItem";
+/* eslint-disable react/jsx-props-no-spreading */
 
-const ThreadLists = ({ threads }) => {
+import React from 'react';
+import PropTypes from 'prop-types';
+import ThreadItem, { threadItemShape } from './ThreadItem';
+
+function ThreadLists({ threads }) {
   return (
     <div className="container">
       {threads.map((thread) => (
@@ -9,6 +12,10 @@ const ThreadLists = ({ threads }) => {
       ))}
     </div>
   );
+}
+
+ThreadLists.propTypes = {
+  threads: PropTypes.arrayOf(PropTypes.shape(threadItemShape)).isRequired,
 };
 
 export default ThreadLists;

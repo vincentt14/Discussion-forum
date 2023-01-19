@@ -1,8 +1,8 @@
-import { hideLoading, showLoading } from "react-redux-loading-bar";
-import api from "../../utils/api";
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
 
 const ActionType = {
-  SET_IS_PRELOAD: "SET_IS_PRELOAD",
+  SET_IS_PRELOAD: 'SET_IS_PRELOAD',
 };
 
 function setIsPreloadActionCreator(isPreload) {
@@ -32,5 +32,5 @@ function asyncPreloadSuccess() {
 export {
   ActionType,
   setIsPreloadActionCreator,
-  asyncPreloadSuccess
-}
+  asyncPreloadSuccess,
+};

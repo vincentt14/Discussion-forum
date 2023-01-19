@@ -1,9 +1,10 @@
-import { hideLoading, showLoading } from "react-redux-loading-bar";
-import api from "../../utils/api";
+import { hideLoading, showLoading } from 'react-redux-loading-bar';
+import api from '../../utils/api';
 
 const ActionType = {
-  RECIEVE_THREAD_DETAIL: "RECIEVE_THREAD_DETAIL",
-  CLEAR_THREAD_DETAIL: "CLEAR_THREAD_DETAIL",
+  RECIEVE_THREAD_DETAIL: 'RECIEVE_THREAD_DETAIL',
+  CLEAR_THREAD_DETAIL: 'CLEAR_THREAD_DETAIL',
+  ADD_THREAD_COMMENT: 'ADD_THREAD_COMMENT',
 };
 
 function recieveThreadDetailActionCreator(detailThread) {
@@ -20,6 +21,10 @@ function clearThreadDetailActionCreator() {
     type: ActionType.CLEAR_THREAD_DETAIL,
   };
 }
+
+// function addThreadCommentActionCreator(content){
+
+// }
 
 function asyncRecieveThreadDetail(threadId) {
   return async (dispatch) => {
@@ -39,5 +44,5 @@ export {
   ActionType,
   recieveThreadDetailActionCreator,
   clearThreadDetailActionCreator,
-  asyncRecieveThreadDetail
-}
+  asyncRecieveThreadDetail,
+};

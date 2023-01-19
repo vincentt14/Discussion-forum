@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import ThreadDetail from "../components/ThreadDetail";
-import { asyncRecieveThreadDetail } from "../states/threadDetail/action";
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import CommentList from '../components/CommentLists';
+import ThreadCommentInput from '../components/ThreadCommentInput';
+import ThreadDetail from '../components/ThreadDetail';
+import { asyncRecieveThreadDetail } from '../states/threadDetail/action';
 
-const DetailPage = () => {
+function DetailPage() {
   const { id } = useParams();
   const { detailThread = null } = useSelector((states) => states);
 
@@ -14,14 +17,22 @@ const DetailPage = () => {
     dispatch(asyncRecieveThreadDetail(id));
   }, [id, dispatch]);
 
+  // const onCommentThread = (thread) => {
+  //   dispatch();
+  // };
+
   if (!detailThread) {
     return null;
   }
   return (
     <section className="container">
       <ThreadDetail {...detailThread} />
+      <h4 className="my-3">Add Comment</h4>
+      <ThreadCommentInput />
+      <h4 className="my-3">Comments</h4>
+      <CommentList comments={detailThread.comments} />
     </section>
   );
-};
+}
 
 export default DetailPage;
