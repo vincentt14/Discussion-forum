@@ -17,10 +17,6 @@ function DetailPage() {
     dispatch(asyncRecieveThreadDetail(id));
   }, [id, dispatch]);
 
-  // const onCommentThread = (thread) => {
-  //   dispatch();
-  // };
-
   if (!detailThread) {
     return null;
   }
@@ -28,7 +24,7 @@ function DetailPage() {
     <section className="container">
       <ThreadDetail {...detailThread} />
       <h4 className="my-3">Add Comment</h4>
-      <ThreadCommentInput />
+      <ThreadCommentInput id={id} />
       <h4 className="my-3">Comments</h4>
       <CommentList comments={detailThread.comments} />
     </section>

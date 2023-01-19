@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import api from '../../utils/api';
 
 const { showLoading, hideLoading } = require('react-redux-loading-bar');

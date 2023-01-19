@@ -1,10 +1,10 @@
+/* eslint-disable no-alert */
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 import api from '../../utils/api';
 
 const ActionType = {
   RECIEVE_THREAD_DETAIL: 'RECIEVE_THREAD_DETAIL',
   CLEAR_THREAD_DETAIL: 'CLEAR_THREAD_DETAIL',
-  ADD_THREAD_COMMENT: 'ADD_THREAD_COMMENT',
 };
 
 function recieveThreadDetailActionCreator(detailThread) {
@@ -16,20 +16,9 @@ function recieveThreadDetailActionCreator(detailThread) {
   };
 }
 
-function clearThreadDetailActionCreator() {
-  return {
-    type: ActionType.CLEAR_THREAD_DETAIL,
-  };
-}
-
-// function addThreadCommentActionCreator(content){
-
-// }
-
 function asyncRecieveThreadDetail(threadId) {
   return async (dispatch) => {
     dispatch(showLoading());
-    dispatch(clearThreadDetailActionCreator());
     try {
       const detailThread = await api.getThreadDetail(threadId);
       dispatch(recieveThreadDetailActionCreator(detailThread));
@@ -43,6 +32,5 @@ function asyncRecieveThreadDetail(threadId) {
 export {
   ActionType,
   recieveThreadDetailActionCreator,
-  clearThreadDetailActionCreator,
   asyncRecieveThreadDetail,
 };

@@ -22,6 +22,7 @@ function CommentItem({ content, createdAt, owner }) {
         {isString(content) === -1 ? <p className="card-text">{parse(content)}</p> : <div className="card-text">{parse(content)}</div>}
         <p className="card-subtitle mb-2 text-muted">
           Created
+          {' '}
           {postedAt(createdAt)}
         </p>
       </div>
