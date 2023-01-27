@@ -5,7 +5,8 @@ import { postedAt } from '../utils';
 
 function CommentItem({ content, createdAt, owner }) {
   const { avatar, name, id } = owner;
-  const isString = (isiContent) => isiContent.search('<div>');
+
+  const isString = (isiContent) => isiContent.search('<div>|<pre>|<p>|<b>|<i>|<blockquote>');
 
   return (
     <div className="card mb-3">
