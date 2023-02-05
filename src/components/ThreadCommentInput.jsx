@@ -15,7 +15,6 @@ function ThreadCommentInput({ id }) {
   const createCommentar = async (e) => {
     e.preventDefault();
     dispatch(asyncAddComment({ content, id }));
-    // await api.createComment({ comment, threadid: id });
     dispatch(asyncRecieveThreadDetail(id));
     setContent('');
   };

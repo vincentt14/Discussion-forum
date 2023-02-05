@@ -39,11 +39,11 @@ function asyncRecieveThreadDetail(threadId) {
   };
 }
 
-function asyncAddComment({ content, threadId }) {
+function asyncAddComment({ content, id }) {
   return async (dispatch) => {
     dispatch(showLoading());
     try {
-      const comment = await api.createComment({ content, threadId });
+      const comment = await api.createComment({ content, id });
       dispatch(addCommentActionCreator(comment));
     } catch (error) {
       alert(error.message);
@@ -52,4 +52,6 @@ function asyncAddComment({ content, threadId }) {
   };
 }
 
-export { ActionType, recieveThreadDetailActionCreator, asyncRecieveThreadDetail, asyncAddComment };
+export {
+  ActionType, recieveThreadDetailActionCreator, asyncRecieveThreadDetail, asyncAddComment,
+};

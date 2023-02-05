@@ -5,7 +5,7 @@ function threadDetailReducer(detailThread = null, action = {}) {
     case ActionType.RECIEVE_THREAD_DETAIL:
       return action.payload.detailThread;
     case ActionType.ADD_COMMENT:
-      return action.payload.detailThread;
+      return detailThread;
     default:
       return detailThread;
   }
