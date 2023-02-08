@@ -5,7 +5,6 @@ import api from '../../utils/api';
 const ActionType = {
   RECEIVE_THREADS: 'RECEIVE_THREADS',
   ADD_THREAD: 'ADD_THREAD',
-  TOGGLE_LIKE_THREAD: 'TOGGLE_LIKE_THREAD',
 };
 
 function recieveThreadsActionCreator(threads) {
