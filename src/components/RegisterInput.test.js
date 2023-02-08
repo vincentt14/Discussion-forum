@@ -11,25 +11,25 @@ describe('RegisterInput component', () => {
   it('should handle name typing correctly', async () => {
     // Arrange
     render(<RegisterInput register={() => {}} />);
-    const usernameInput = await screen.getByPlaceholderText('Name');
+    const nameInput = await screen.getByPlaceholderText('Name');
 
     // Action
-    await userEvent.type(usernameInput, 'usernametest');
+    await userEvent.type(nameInput, 'usernametest');
 
     // Assert
-    expect(usernameInput).toHaveValue('usernametest');
+    expect(nameInput).toHaveValue('usernametest');
   });
 
-  it('should handle username typing correctly', async () => {
+  it('should handle email typing correctly', async () => {
     // Arrange
     render(<RegisterInput register={() => {}} />);
-    const usernameInput = await screen.getByPlaceholderText('Email');
+    const emailInput = await screen.getByPlaceholderText('Email');
 
     // Action
-    await userEvent.type(usernameInput, 'usernametest@gmail.com');
+    await userEvent.type(emailInput, 'usernametest@gmail.com');
 
     // Assert
-    expect(usernameInput).toHaveValue('usernametest@gmail.com');
+    expect(emailInput).toHaveValue('usernametest@gmail.com');
   });
 
   it('should handle password typing correctly', async () => {
@@ -47,8 +47,8 @@ describe('RegisterInput component', () => {
     render(<RegisterInput register={mockRegis} />);
     const nameInput = await screen.getByPlaceholderText('Name');
     await userEvent.type(nameInput, 'usernametest');
-    const usernameInput = await screen.getByPlaceholderText('Email');
-    await userEvent.type(usernameInput, 'usernametest@gmail.com');
+    const emailInput = await screen.getByPlaceholderText('Email');
+    await userEvent.type(emailInput, 'usernametest@gmail.com');
     const passwordInput = await screen.getByPlaceholderText('Password');
     await userEvent.type(passwordInput, 'passwordtest');
     const loginButton = await screen.getByRole('button', { name: 'Register' });

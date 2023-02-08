@@ -7,11 +7,14 @@ function Navigation({ authUser, signOut }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
-          Forum
-          <span style={{ color: '#4877fd' }}>N</span>
-          Go
-        </Link>
+        <nav>
+          <Link to="/" className="navbar-brand">
+            Forum
+            <span style={{ color: '#4877fd' }}>N</span>
+            Go
+          </Link>
+        </nav>
+
         <img className="border border-secondary rounded-3" style={{ height: '40px' }} src={authUser.avatar} alt={authUser.id} title={authUser.name} />
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />

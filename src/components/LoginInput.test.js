@@ -11,13 +11,13 @@ describe('LoginInput component', () => {
   it('should handle username typing correctly', async () => {
     // Arrange
     render(<LoginInput login={() => {}} />);
-    const usernameInput = await screen.getByPlaceholderText('Email');
+    const emailInput = await screen.getByPlaceholderText('Email');
 
     // Action
-    await userEvent.type(usernameInput, 'usernametest@gmail.com');
+    await userEvent.type(emailInput, 'usernametest@gmail.com');
 
     // Assert
-    expect(usernameInput).toHaveValue('usernametest@gmail.com');
+    expect(emailInput).toHaveValue('usernametest@gmail.com');
   });
 
   it('should handle password typing correctly', async () => {
@@ -33,8 +33,8 @@ describe('LoginInput component', () => {
     // arrange
     const mockLogin = jest.fn();
     render(<LoginInput login={mockLogin} />);
-    const usernameInput = await screen.getByPlaceholderText('Email');
-    await userEvent.type(usernameInput, 'usernametest@gmail.com');
+    const emailInput = await screen.getByPlaceholderText('Email');
+    await userEvent.type(emailInput, 'usernametest@gmail.com');
     const passwordInput = await screen.getByPlaceholderText('Password');
     await userEvent.type(passwordInput, 'passwordtest');
     const loginButton = await screen.getByRole('button', { name: 'Login' });
